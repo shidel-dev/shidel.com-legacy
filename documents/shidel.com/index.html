@@ -1,0 +1,334 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable = no">
+<link rel="stylesheet" type="text/css" href="shidel.css" >
+
+<title>Andrew and Joeseph Shidel's Developmet Showcase</title>
+
+<meta name="keywords" content="Andrew, Joe, Joeseph, Shidel, Development, Dev">
+<meta name="description" content="Pittsburgh web developers Andrew Shidel and Joe Shidel's development showcase portfolio. We use HMTL5, PHP, Javascript, JQuery, Python, Ruby on Rails, CSS3, and MYSQL. ">
+
+
+<script>
+
+
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-36751755-2', 'shidel.com');
+  ga('send', 'pageview');
+
+</script>
+
+
+</head>
+ 
+ 
+ 
+<body>
+	<div class='header' id='header'>
+			<span id='banner' onclick="location.href='http://www.shidel.com'" ><span class='inner'>SHIDEL.dev</span></span>
+			<span id="about"><span class='inner'>About Us</span></span>
+			<span id="projects"><span class='inner'>Projects</span></span>
+			<span id="articles"><span class='inner'>Articles</span></span>
+			<img id="nav" src="threelines.png" />
+
+		</div>	
+	
+<div id='container'>
+	
+<div id="drop">	
+		<div><span id="inner">About Us</span></div>
+		<div><span id="inner">Projects</span></div>
+		<div><span id="inner">Articles</span></div>
+	
+	</div>
+
+ 
+
+		
+		<div class='column2'>
+			<img id='andrew' alt="Andrew Shidel" src="andrew.png" />
+			<img id='joe' alt="Joe Shidel" src="Joe.png" />
+		
+			<div id='nTag1'class='name'>Andrew </div>
+			<div id='nTag2'class='name'>Joe</div>
+			<img id='point' alt="Andrew and Joe Shidel" src="point.png" />
+			
+			<div id="jcontent" class='specs'><h1>-Joe Shidel-</h1></br>
+			<p>Joe is an entrepreneur and web platform advocate</p></br>
+			<p>He is a MBA student at Indiana University of Pennsylvania's business school. His passions are the web platform,designing for the mobile web, and embracing new technologies.</p></br>
+			<p>joe@shidel.com<p></br>
+			
+			
+			
+			</div>
+			<div id="acontent" class='specs'><h1>-Andrew Shidel-</h1></br>
+			<p>Andrew is a computer science student at Drexel University in Philadelphia</p></br>
+			<p>Andrew specializes in App development for Android and IOS. In addition Andrew is an advocate of the mobile web, and promotes the adoption of new technologies. </p></br>
+			<p>andrew@shidel.com<p></br>	 </div>
+		
+		</div>
+	
+	
+	<div class='column1'>
+	<iframe src="desktop.html" id='data' class='data' scrolling="yes" frameborder="0"  ></iframe>
+	
+	</div>	
+	<div class='column3'>
+	<span id='pholder'>
+	<img id="mobymenu" class="article" alt="Moby Menu by Andrew Shidel and Joe Shidel" src="mobymenu.png" />
+
+	<img id='slideui' class="article" alt="SlideUi by Andrew Shidel and Joe Shidel" src="slideui.png" />
+	
+	
+
+	</span>
+	
+	<span id='aholder'>
+	<div class="card" id="flw" onclick="location.href='http://www.shidel.com/flw.html'">What Web Designers Can Learn From Frank Lloyd Wright.</div>
+	<div class="card" id="voice">Implimenting Webkit Speech Recognition </div>
+	<div class="card" id="speach">Using Text to Speach</div>
+	
+	</span>
+</div>
+	
+</div>
+
+ 
+</body>
+
+
+<script src="jquery.js"></script>
+<script>
+var a=1;
+var j=1;
+var p=1;
+var heads=1;
+var ar=1;
+var drop = false;
+
+var winW;
+var winH
+
+
+document.getElementById('voice').addEventListener('click', function(event) {
+	
+	document.getElementById("data").src = "article1.html";
+	
+	
+});
+
+/*document.getElementById("data").onload=function(){
+		
+	history.pushState(null,null, location.hash);
+	location.hash = "article1"
+	
+}*/
+
+window.onload=function(){
+
+	sizer();
+
+	if (location.hash == "#article1"){
+		 document.getElementById("data").src = "article1.html"
+	}
+	
+		/*if (winW < 600){
+		
+			var code = "";
+			
+			var articles = document.getElementsByClassName("article");
+			var cards = document.getElementsByClassName("card");
+			
+			for (var i = 0; i < articles.length; i++){				
+				code += "<img src='" + articles[i].src + "' style='position: absolute; top: 5%; width: 45%; left: "+i*48+"%; '/>";				
+			}
+			
+			for (var i = 0; i < cards.length; i++){
+				code += "<div style='position: absolute; border:2px solid; top: 65%; width: 45%;left: "+i*48+"%; ' onclick="+$(cards[i]).attr("onclick")+">" + cards[i].innerHTML + "</div>";
+			}
+			
+			document.getElementById("drop").innerHTML = code;
+		
+		
+		}*/
+	}
+
+
+/*document.getElementById('voice').addEventListener('click', function(event) {
+
+document.getElementById('data').src='http://www.shidel.com/voice.html';
+
+});*/
+
+document.getElementById('data').addEventListener('click', function(event) {
+	
+	console.log("click");
+	document.getElementById("drop").className = "dismiss";
+	drop = false;
+	
+});
+
+
+document.getElementById('nav').addEventListener('click', function(event) {
+	
+	
+	
+	
+	if (!drop){
+		document.getElementById("drop").className = "show";
+		drop = true;
+	}else{
+		document.getElementById("drop").className = "dismiss";
+		drop = false;
+	}
+	
+});
+
+
+document.getElementById('header').addEventListener('click', function(event) {
+var el=$(event.target).parent();	
+var id=$(el).attr('id');
+
+if (id=='projects'){
+if (p==1)
+{
+document.getElementById('pholder').style.marginLeft='0%';
+document.getElementById('aholder').style.marginLeft='100%';	
+p=2;
+}
+
+else
+{
+document.getElementById('pholder').style.marginLeft='100%';	
+p=1;
+}
+	
+}
+if (id=='articles'){
+if (ar==1)
+{
+document.getElementById('aholder').style.marginLeft='0%';
+document.getElementById('pholder').style.marginLeft='100%';
+ar=2;
+}
+
+else
+{
+document.getElementById('aholder').style.marginLeft='100%';	
+ar=1;
+}
+	
+}
+});
+
+
+document.getElementById('header').addEventListener('click', function(event) {
+var el=$(event.target).parent();	
+var id=$(el).attr('id');
+
+if(id=='about'){
+	
+	
+if (heads==1){
+		
+document.getElementById("joe").className = "bounce";
+document.getElementById("andrew").className = "bounce";
+document.getElementById('nTag1').style.display='block';
+document.getElementById('nTag2').style.display='block';
+heads=2;
+
+}
+
+else
+{
+document.getElementById("joe").className = "up";
+document.getElementById("andrew").className = "up";	
+document.getElementById('nTag1').style.display='none';
+document.getElementById('nTag2').style.display='none';
+document.getElementById('jcontent').style.display="none";
+document.getElementById('acontent').style.display="none";
+document.getElementById('point').style.display="none";
+heads=1;
+
+}
+}
+});
+
+
+document.getElementById('andrew').addEventListener('click', function(event) {
+if (a==1){	
+document.getElementById('point').style.display="block";
+document.getElementById('acontent').style.display="block";
+document.getElementById('nTag1').style.display='none';
+document.getElementById('nTag2').style.display='none';
+document.getElementById('jcontent').style.display="none";
+document.getElementById('point').style.left='26%';
+a=2;
+j=1;
+}
+else{
+document.getElementById('point').style.display="none";
+document.getElementById('acontent').style.display="none";
+document.getElementById('jcontent').style.display="none";
+document.getElementById('nTag1').style.display='block';
+document.getElementById('nTag2').style.display='block';
+
+a=1;
+
+}
+});
+
+document.getElementById('joe').addEventListener('click', function(event) {
+if (j==1){	
+
+document.getElementById('point').style.display="block";
+document.getElementById('jcontent').style.display="block";
+document.getElementById('nTag1').style.display='none';
+document.getElementById('nTag2').style.display='none';
+document.getElementById('acontent').style.display="none";
+document.getElementById('point').style.left='64%';
+j=2;
+a=1;
+}
+else{
+document.getElementById('point').style.display="none";
+document.getElementById('jcontent').style.display="none";
+document.getElementById('acontent').style.display="none";
+document.getElementById('nTag1').style.display='block';
+document.getElementById('nTag2').style.display='block';
+
+j=1;
+
+}
+});
+
+
+window.onresize=function(){
+	sizer();
+};
+
+function sizer(){
+
+ winW = $(window).width();
+ winH =$(window).height();
+$('#container').css({'width':winW+'px','height':winH+'px'});
+
+
+$('.specs').css({'margin-top':($('.column2').width())*(32/100)+49+'px'});  
+$('#point').css({'margin-top':($('.column2').width())*(32/100)+24+'px'});  
+$('.name').css({'margin-top':($('.column2').width())*(27/100)+13+'pt'});  
+
+
+
+
+
+};
+
+</script>
+
+</html>
